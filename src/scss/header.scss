@@ -4,29 +4,52 @@
 	font-size: rem(20);
 	// .header__container
 	&__container {
-		display: grid;
-		gap: rem(32);
-		height: rem(71);
-		grid-template-columns: repeat(3, 1fr);
+		display: flex;
+		gap: 1rem;
 		align-items: center;
+		@include adaptiveValue("height", 71, 43, 768, 320, 1);
+		@media (max-width: $mobileSmall) {
+			gap: rem(27);
+		}
 	}
 	// .header__left
 	&__left {
+		flex: 0 1 33%;
 		display: flex;
 		align-items: center;
+		gap: rem(30);
 		.menu-open & {
 			padding-left: rem(20);
+		}
+		@media (max-width: $mobileSmall) {
+			flex: 0 1 auto;
 		}
 	}
 	// .header__logo
 	&__logo {
-		justify-self: center;
+		flex: 0 1 33%;
+		& img {
+			display: block;
+			margin: 0 auto;
+			max-width: 146px;
+			min-width: 100px;
+			width: 100%;
+			height: auto;
+		}
+		@media (max-width: $mobileSmall) {
+			order: 2;
+		}
 	}
 	// .header__right
 	&__right {
+		flex: 0 1 33%;
 		display: flex;
 		justify-content: flex-end;
 		gap: rem(26);
+		@media (max-width: $mobileSmall) {
+			justify-content: flex-start;
+			flex: 1 1 auto;
+		}
 	}
 }
 .header-left {
@@ -35,15 +58,29 @@
 	}
 	// .header-left__location
 	&__location {
-		margin-left: rem(23);
 		position: relative;
+		@media (max-width: $mobileSmall) {
+			display: none;
+		}
 	}
 	// .header-left__phone
 	&__phone {
-		margin-left: rem(35);
+		position: relative;
+		font-family: "Jura";
 		font-weight: 500;
 		line-height: 1.2;
 		text-transform: uppercase;
+		&::before {
+			display: none;
+		}
+		@media (max-width: $mobile) {
+			&::before {
+				display: block;
+			}
+			& span {
+				display: none;
+			}
+		}
 	}
 }
 .menu {
@@ -120,10 +157,10 @@
 		text-transform: uppercase;
 		// .menu__list_main
 		&_main {
-			row-gap: rem(42);
 			font-weight: 500;
-			font-size: rem(18);
 			line-height: 1.22;
+			@include adaptiveValue("font-size", 18, 16, 768, 320, 1);
+			@include adaptiveValue("row-gap", 42, 25);
 		}
 		// .menu__list_sub
 		&_sub {
@@ -134,7 +171,7 @@
 			opacity: 0.6;
 		}
 		&:not(:last-child) {
-			margin-bottom: rem(53);
+			@include adaptiveValue("margin-bottom", 70, 25);
 		}
 	}
 	// .menu__item
@@ -152,8 +189,14 @@
 	}
 	// .header-right__notifications
 	&__notifications {
+		@media (max-width: $mobileSmall) {
+			display: none;
+		}
 	}
 	// .header-right__search
 	&__search {
+		@media (max-width: $mobileSmall) {
+			display: none;
+		}
 	}
 }
