@@ -1,5 +1,8 @@
 .header {
-	position: relative;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 	background-color: rgba(33, 33, 33, 0.8);
 	font-size: rem(20);
 	// .header__container
@@ -19,7 +22,7 @@
 		align-items: center;
 		gap: rem(30);
 		.menu-open & {
-			padding-left: rem(20);
+			padding-left: rem(50);
 		}
 		@media (max-width: $mobileSmall) {
 			flex: 0 1 auto;
@@ -52,6 +55,7 @@
 		}
 	}
 }
+//====================================================================
 .header-left {
 	// .header-left__menu
 	&__menu {
@@ -83,6 +87,7 @@
 		}
 	}
 }
+//====================================================================
 .menu {
 	.menu-open & {
 		position: fixed;
@@ -103,6 +108,16 @@
 			height: rem(24);
 			z-index: 10;
 			background-color: initial;
+			opacity: 0;
+			animation: animation-opacity 2s forwards;
+			@keyframes animation-opacity {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
 			&::before {
 				content: "\e90f";
 				font-size: rem(10);
@@ -112,32 +127,29 @@
 	}
 	// .menu__body
 	&__body {
-		display: none;
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		top: 0;
+		left: -100%;
+		width: rem(444);
+		z-index: 5;
+		padding: rem(115) 0 0 rem(48);
+		background-color: $mainColorDarkGray;
+		overflow: hidden;
+		transition: left 0.3s ease 0s;
+		&::before {
+			background: url("@img/main-block/bg.png") center 0 no-repeat;
+			background-size: cover;
+			filter: blur(20px);
+		}
+		&::after {
+			background-color: rgba(0, 0, 0, 0.64);
+		}
 		.menu-open & {
-			position: fixed;
-			display: flex;
-			flex-direction: column;
-			top: 0;
 			left: 0;
-			height: 100%;
-			width: rem(444);
-			z-index: 5;
-			padding: rem(115) 0 0 rem(48);
-			background-color: $mainColorDarkGray;
-			overflow: hidden;
-			&::before {
-				position: absolute;
-				content: "";
-				left: 0;
-				top: 0;
-				width: 100%;
-				height: 100%;
-				z-index: -2;
-				background: url("@img/main-block/bg.png") center 0 no-repeat;
-				background-size: cover;
-				filter: blur(20px);
-				// opacity: 0.6;
-			}
+			&::before,
 			&::after {
 				position: absolute;
 				content: "";
@@ -146,7 +158,6 @@
 				width: 100%;
 				height: 100%;
 				z-index: -2;
-				background-color: rgba(0, 0, 0, 0.64);
 			}
 		}
 	}
@@ -181,8 +192,7 @@
 	&__link {
 	}
 }
-.icon-menu {
-}
+//====================================================================
 .header-right {
 	// .header-right__basket
 	&__basket {
