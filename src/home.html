@@ -1,16 +1,79 @@
 <!DOCTYPE html>
 <html lang="ru">
-	@@include('html/_head.htm',{
-	"title":"Главная"
-	})
-	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{})
-			<main class="page">
-			</main>
-			@@include('html/_footer.htm',{})
-		</div>
-		@@include('html/_popup.htm',{})
-		@@include('html/_js.htm',{})
-	</body>
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="page__main-slider main-slider">
+				<div class="main-slider__slider">
+					<div class="main-slider__swiper">
+						<div class="main-slider__slide slide-main-slider">
+							<div class=" slide-main-slider__container">
+								<div class="slide-main-slider__content">
+									<h2 class="slide-main-slider__title">Исключительное качество без компромиссов</h2>
+									<div class="slide-main-slider__text">Ножи «Tuotown» – это главный инструмент поваров и секрет кулинарного мастерства</div>
+								</div>
+								<a href="" data-swiper-parallax="-250" class="slide-main-slider__button button">Подробнее</a>
+							</div>
+							<div class="slide-main-slider__image">
+								<img src="@img/main-block/1.jpg" alt="">
+							</div>
+						</div>
+						<div class="main-slider__slide slide-main-slider">
+							<div class=" slide-main-slider__container">
+								<div class="slide-main-slider__content">
+									<h2 class="slide-main-slider__title">Исключительное качество без компромиссов</h2>
+									<div class="slide-main-slider__text">Ножи «Tuotown» – это главный инструмент поваров и секрет кулинарного мастерства</div>
+								</div>
+								<a href="" data-swiper-parallax="-250" class="slide-main-slider__button button">Подробнее</a>
+							</div>
+							<div class="slide-main-slider__image">
+								<img src="@img/main-block/2.jpg" alt="">
+							</div>
+						</div>
+						<div class="main-slider__slide slide-main-slider">
+							<div class=" slide-main-slider__container">
+								<div class="slide-main-slider__content">
+									<h2 class="slide-main-slider__title">Исключительное качество без компромиссов</h2>
+									<div class="slide-main-slider__text">Ножи «Tuotown» – это главный инструмент поваров и секрет кулинарного мастерства</div>
+								</div>
+								<a href="" data-swiper-parallax="-250" class="slide-main-slider__button button">Подробнее</a>
+							</div>
+							<div class="slide-main-slider__image">
+								<img src="@img/main-block/3.jpg" alt="">
+							</div>
+						</div>
+						<div class="main-slider__slide slide-main-slider">
+							<div class=" slide-main-slider__container">
+								<div class="slide-main-slider__content">
+									<h2 class="slide-main-slider__title">Исключительное качество без компромиссов</h2>
+									<div class="slide-main-slider__text">Ножи «Tuotown» – это главный инструмент поваров и секрет кулинарного мастерства</div>
+								</div>
+								<a href="" data-swiper-parallax="-250" class="slide-main-slider__button button">Подробнее</a>
+							</div>
+							<div class="slide-main-slider__image">
+								<img src="@img/main-block/2.jpg" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="main-slider__controll controll-main-slider">
+						<div class="controll-main-slider__container">
+							<div class="controll-main-slider__button-prev _icon-arrow-right"></div>
+							<div class="controll-main-slider__pagination"> </div>
+							<div class="controll-main-slider__button-next _icon-arrow-right"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
 </html>

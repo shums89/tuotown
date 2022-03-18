@@ -137,3 +137,9 @@ body {
 
 // Подключение стилей отдельных страниц
 @import "home";
+
+.page {
+	// .page__main-slider
+	&__main-slider {
+	}
+}
