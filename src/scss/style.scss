@@ -141,5 +141,10 @@ body {
 .page {
 	// .page__main-slider
 	&__main-slider {
+		margin-bottom: rem(60);
+	}
+	// .page__categories
+	&__categories {
+		margin-bottom: rem(60);
 	}
 }

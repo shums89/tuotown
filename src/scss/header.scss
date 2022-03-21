@@ -178,6 +178,9 @@
 				z-index: -2;
 			}
 		}
+		@media (max-width: em(444)) {
+			width: 100%;
+		}
 	}
 	// .menu__list
 	&__list {

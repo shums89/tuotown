@@ -2,7 +2,7 @@
   // .main-slider__slider
   &__slider {
     width: 100vw;
-    height: rem(590);
+    @include adaptiveValue("height", 590, 540, 768, 320, 1);
   }
   // .main-slider__swiper
   &__swiper {
@@ -21,32 +21,53 @@
 .slide-main-slider {
   // .slide-main-slider__container
   &__container {
-    padding-top: rem(149);
+    @include adaptiveValue("padding-top", 149, 131, 1200, 768, 2);
+    @include adaptiveValue("padding-top", 131, 73, 768, 320);
   }
   // .slide-main-slider__content
   &__content {
-    margin-left: rem(69);
     margin-bottom: rem(39);
+    @include adaptiveValue("margin-left", 69, 52, 1200, 768, 2);
+    @include adaptiveValue("margin-left", 52, 0, 768, 320, 2);
+
+    @include adaptiveValue("margin-right", 69, 52, 1200, 768);
+    @include adaptiveValue("margin-right", 52, 0, 768, 320);
   }
   // .slide-main-slider__title
   &__title {
     width: rem(602);
     font-family: "Jura";
     font-weight: 400;
-    font-size: rem(41);
     line-height: 1.17;
     margin-bottom: rem(24);
+    @include adaptiveValue("font-size", 41, 24, 1200, 768, 1);
+    @media (max-width: em(768)) {
+      text-transform: uppercase;
+      width: 100%;
+    }
   }
   // .slide-main-slider__text
   &__text {
     width: rem(447);
     font-weight: 400;
-    font-size: rem(19);
     line-height: 1.21;
+    @include adaptiveValue("font-size", 19, 16, 1200, 768, 2);
+    @include adaptiveValue("font-size", 16, 14, 768, 320);
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+    @media (max-width: em(768)) {
+      line-height: 1.25;
+    }
+    @media (max-width: em(320)) {
+      line-height: 1.4;
+    }
   }
   // .slide-main-slider__button
   &__button {
-    margin-left: rem(69);
+    @include adaptiveValue("height", 55, 49, 1200, 768, 1);
+    @include adaptiveValue("margin-left", 69, 52, 1200, 768, 2);
+    @include adaptiveValue("margin-left", 52, 0, 768, 320, 2);
   }
   // .slide-main-slider__image
   &__image {
@@ -72,19 +93,24 @@
   &__container {
     display: flex;
     justify-content: space-between;
+    column-gap: rem(20);
   }
   // .controll-main-slider__pagination
   &__pagination {
-    z-index: 5;
+    flex: 1 1 auto;
+    max-width: rem(440);
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: rem(42);
+    row-gap: rem(10);
+    @include adaptiveValue("column-gap", 42, 15, 768, 320, 1);
     font-weight: 600;
     font-size: rem(15);
     line-height: 1.2;
     cursor: pointer;
+    z-index: 5;
     transition: font-size 0.3s ease 0s;
     & [class*="-bullet"] {
       @media (any-hover: hover) {
@@ -111,6 +137,7 @@
   // .controll-main-slider__button-next
   &__button-prev,
   &__button-next {
+    flex: 0 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,5 +161,53 @@
   }
   &__button-next {
     transform: rotate(0deg);
+  }
+}
+//====================================================================
+.categories {
+  // .categories__container
+  &__container {
+  }
+  // .categories__list
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex: 1 0 auto;
+    gap: rem(40) rem(20);
+
+    @include adaptiveValue("margin-left", 90, 52, 1200, 768, 2);
+    @include adaptiveValue("margin-left", 52, 0, 768, 320);
+
+    @include adaptiveValue("margin-right", 90, 52, 1200, 768, 2);
+    @include adaptiveValue("margin-right", 52, 0, 768, 320);
+  }
+  // .categories__item
+  &__item {
+    @include adaptiveValue("max-width", 210, 142, 1200, 768, 2);
+    @include adaptiveValue("max-width", 142, 135, 768, 320);
+  }
+  // .categories__link
+  &__link {
+    display: inline-block;
+    width: 100%;
+    font-weight: 500;
+    font-size: rem(17);
+    line-height: 1.24;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    &::before {
+      font-size: rem(42);
+      margin-bottom: rem(30);
+      @media (max-width: em(580)) {
+        margin-bottom: rem(15);
+      }
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: #ff0000;
+      }
+    }
   }
 }
