@@ -21,17 +21,16 @@
 .slide-main-slider {
   // .slide-main-slider__container
   &__container {
+  }
+  // .slide-main-slider__wrapper_main
+  &__wrapper_main {
     @include adaptiveValue("padding-top", 149, 131, 1200, 768, 2);
     @include adaptiveValue("padding-top", 131, 73, 768, 320);
   }
   // .slide-main-slider__content
   &__content {
     margin-bottom: rem(39);
-    @include adaptiveValue("margin-left", 69, 52, 1200, 768, 2);
-    @include adaptiveValue("margin-left", 52, 0, 768, 320, 2);
-
-    @include adaptiveValue("margin-right", 69, 52, 1200, 768);
-    @include adaptiveValue("margin-right", 52, 0, 768, 320);
+    @include adaptiveValue("margin-left", 69, 0, 1200, 768, 1);
   }
   // .slide-main-slider__title
   &__title {
@@ -66,8 +65,7 @@
   // .slide-main-slider__button
   &__button {
     @include adaptiveValue("height", 55, 49, 1200, 768, 1);
-    @include adaptiveValue("margin-left", 69, 52, 1200, 768, 2);
-    @include adaptiveValue("margin-left", 52, 0, 768, 320, 2);
+    @include adaptiveValue("margin-left", 72, 0, 1200, 768, 1);
   }
   // .slide-main-slider__image
   &__image {
@@ -91,6 +89,9 @@
   margin-top: rem(-81);
   // .controll-main-slider__container
   &__container {
+  }
+  // .controll-main-slider__wrapper_main
+  &__wrapper_main {
     display: flex;
     justify-content: space-between;
     column-gap: rem(20);
@@ -168,6 +169,9 @@
   // .categories__container
   &__container {
   }
+  // .categories__wrapper_main
+  &__wrapper_main {
+  }
   // .categories__list
   &__list {
     display: flex;
@@ -175,12 +179,10 @@
     justify-content: space-between;
     flex: 1 0 auto;
     gap: rem(40) rem(20);
-
-    @include adaptiveValue("margin-left", 90, 52, 1200, 768, 2);
-    @include adaptiveValue("margin-left", 52, 0, 768, 320);
-
-    @include adaptiveValue("margin-right", 90, 52, 1200, 768, 2);
-    @include adaptiveValue("margin-right", 52, 0, 768, 320);
+    @include adaptiveValue("margin-left", 90, 0, 1200, 768, 1);
+    // @include adaptiveValue("margin-left", 52, 0, 768, 320);
+    @include adaptiveValue("margin-right", 90, 0, 1200, 768, 1);
+    // @include adaptiveValue("margin-right", 52, 0, 768, 320);
   }
   // .categories__item
   &__item {
@@ -210,4 +212,11 @@
       }
     }
   }
+}
+//====================================================================
+[class*="__wrapper_main"] {
+  @include adaptiveValue("padding-left", 0, 54, 1200, 768, 2);
+  @include adaptiveValue("padding-left", 54, 0, 768, 320);
+  @include adaptiveValue("padding-right", 0, 54, 1200, 768, 2);
+  @include adaptiveValue("padding-right", 54, 0, 768, 320);
 }

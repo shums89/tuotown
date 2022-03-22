@@ -27,9 +27,9 @@ $mainColorDarkGray: #373737;
 // Минимальная ширина страницы
 $minWidth: 320;
 // Ширина полотна (макета)
-$maxWidth: 1440;
+$maxWidth: 1920;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
-$maxWidthContainer: 1200;
+$maxWidthContainer: 1290;
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
 $containerPadding: 30;
@@ -96,6 +96,9 @@ body {
 		@if ($containerPadding>0) {
 			padding: 0 rem(math.div($containerPadding, 2));
 		}
+	}
+	[class*="__container_narrow"] {
+		max-width: rem(1200);
 	}
 } @else {
 	// По брейк-поинтам

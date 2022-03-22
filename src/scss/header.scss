@@ -6,19 +6,27 @@
 	background-color: rgba(33, 33, 33, 0.8);
 	font-size: rem(20);
 	z-index: 10;
-	// .header__container
-	&__container {
+	// .header__wrapper
+	&__wrapper {
 		display: flex;
 		gap: 1rem;
 		align-items: center;
 		@include adaptiveValue("height", 71, 43, 768, 320, 1);
+		&:not(.header__container) {
+			@include adaptiveValue("padding-right", 50, 15, $maxWidthContainer, 768, 1);
+			@include adaptiveValue("padding-left", 50, 15, $maxWidthContainer, 768, 1);
+		}
 		@media (max-width: $mobileSmall) {
 			gap: rem(27);
 		}
 	}
+	// .header__container
+	// &__container {
+	// 	padding: 0px rem(25) 0px;
+	// }
 	// .header__left
 	&__left {
-		flex: 0 1 33%;
+		flex: 0 1 39%;
 		display: flex;
 		align-items: center;
 		gap: rem(30);
@@ -31,7 +39,7 @@
 	}
 	// .header__logo
 	&__logo {
-		flex: 0 1 33%;
+		flex: 0 1 22%;
 		& img {
 			display: block;
 			margin: 0 auto;
@@ -46,7 +54,7 @@
 	}
 	// .header__right
 	&__right {
-		flex: 0 1 33%;
+		flex: 0 1 39%;
 		display: flex;
 		justify-content: flex-end;
 		gap: rem(26);
