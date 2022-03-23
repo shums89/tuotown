@@ -1,1 +1,57 @@
 // Заголовки, общие БЄМ блоки и проче...
+//====================================================================
+[class*="__wrapper_main"] {
+  @include adaptiveValue("padding-left", 0, 54, 1200, 768, 2);
+  @include adaptiveValue("padding-left", 54, 0, 768, 320);
+  @include adaptiveValue("padding-right", 0, 54, 1200, 768, 2);
+  @include adaptiveValue("padding-right", 54, 0, 768, 320);
+}
+//====================================================================
+.intro-collection {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  // .intro-collection__link
+  &__link {
+    @media (any-hover: hover) {
+      &:hover {
+        & img {
+          transform: scale(1.2);
+        }
+        & span {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  // .intro-collection__title
+  &__title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: rem(28) rem(42) rem(28) rem(26);
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & span {
+      font-weight: 600;
+      font-size: rem(17);
+      line-height: 1.65;
+    }
+    &::before {
+      order: 2;
+      font-size: rem(10);
+    }
+  }
+  // .intro-collection__image-ibg
+  &__image-ibg {
+    padding-bottom: percent(481, 590);
+    border-radius: 14px;
+    overflow: hidden;
+    & img {
+      transition: transform 1s ease 0s;
+    }
+  }
+}

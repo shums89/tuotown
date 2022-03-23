@@ -7,7 +7,7 @@
 <body>
 	<div class="wrapper">
 		@@include('html/_header.htm',{
-		"classContainer": "header__container head er__container_narrow"
+		"classContainer": "header__container header__container_narrow"
 		})
 		<main class="page">
 			<section class="page__main-slider main-slider">
@@ -82,7 +82,7 @@
 				</div>
 			</section>
 			<div class="page__categories categories">
-				<div class="categories__container header__container_narrow">
+				<div class="categories__container categories__container_narrow">
 					<div class="categories__wrapper_main">
 						<ul class="categories__list">
 							<li class="categories__item">
@@ -106,6 +106,18 @@
 								</a>
 							</li>
 						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="page__products-preview products-preview">
+				<div class="products-preview__container products-preview__container_narrow">
+					<div class="products-preview__wrapper_main">
+						<div class="products-preview__intro-collection">
+							@@include('html/_intro-collection.htm',{
+							"title": "Познакомьтесь с коллекцией ножей TUOTOWN",
+							"blockImage": "intro-collection/1.jpg"
+							})
+						</div>
 					</div>
 				</div>
 			</div>

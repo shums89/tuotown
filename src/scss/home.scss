@@ -214,9 +214,19 @@
   }
 }
 //====================================================================
-[class*="__wrapper_main"] {
-  @include adaptiveValue("padding-left", 0, 54, 1200, 768, 2);
-  @include adaptiveValue("padding-left", 54, 0, 768, 320);
-  @include adaptiveValue("padding-right", 0, 54, 1200, 768, 2);
-  @include adaptiveValue("padding-right", 54, 0, 768, 320);
+.products-preview {
+  // .products-preview__container
+  &__container {
+  }
+  // .products-preview__wrapper_main
+  &__wrapper_main {
+    display: grid;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    gap: rem(25) rem(18);
+  }
+  // .products-preview__intro-collection
+  &__intro-collection {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
 }
