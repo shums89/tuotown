@@ -9,32 +9,25 @@
 //====================================================================
 .intro-collection {
   position: relative;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  // .intro-collection__link
-  &__link {
+  height: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column-reverse;
+  // .intro-collection__title
+  &__title {
     @media (any-hover: hover) {
-      &:hover {
-        & img {
-          transform: scale(1.2);
-        }
-        & span {
-          text-decoration: underline;
-        }
+      &:hover + * img {
+        transform: scale(1.1);
       }
     }
   }
-  // .intro-collection__title
-  &__title {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: rem(28) rem(42) rem(28) rem(26);
-    z-index: 2;
+  // .intro-collection__title-link
+  &__title-link {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: rem(28) rem(42) rem(28) rem(26);
     & span {
       font-weight: 600;
       font-size: rem(17);
@@ -44,14 +37,145 @@
       order: 2;
       font-size: rem(10);
     }
+    @media (any-hover: hover) {
+      &:hover {
+        & span {
+          text-decoration: underline;
+        }
+        &::before {
+          font-size: rem(15);
+        }
+      }
+    }
   }
   // .intro-collection__image-ibg
   &__image-ibg {
-    padding-bottom: percent(481, 590);
-    border-radius: 14px;
-    overflow: hidden;
+    position: initial;
+    z-index: -2;
     & img {
       transition: transform 1s ease 0s;
+    }
+  }
+}
+//====================================================================
+.product-cart {
+  position: relative;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: rem(13);
+  @media (any-hover: hover) {
+    &:hover .product-cart__shop-link {
+      background-color: #c80000;
+    }
+  }
+  // .product-cart__image
+  &__image {
+    flex: 0 0 auto;
+    background-color: $mainColorDarkGrayBg;
+    border-radius: 14px;
+    overflow: hidden;
+    height: rem(412);
+    padding: rem(11);
+    & img {
+      transition: transform 1s ease 0s;
+    }
+    @media (any-hover: hover) {
+      &:hover img {
+        transform: scale(1.2);
+      }
+    }
+  }
+  // .product-cart__image-ibg
+  &__image-ibg {
+    display: block;
+    padding-bottom: percent(412, 286);
+  }
+
+  // .product-cart__body
+  &__body {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: 2;
+  }
+  // .product-cart__title
+  &__title {
+  }
+  // .product-cart__title-link
+  &__title-link {
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  // .product-cart__shop-link
+  &__shop-link {
+    position: absolute;
+    top: rem(24);
+    right: rem(27);
+    height: rem(37);
+    width: rem(37);
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: rem(11);
+    padding: rem(11);
+    overflow: hidden;
+    transition: width 0.5s ease 0s, background-color 0.5s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        width: rem(72);
+        & .product-cart__shop {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  // .product-cart__plus
+  &__plus {
+    flex: 0 0 rem(15);
+    position: relative;
+    // display: inline-block;
+    height: rem(15);
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #fff;
+    }
+    &::after {
+      transform: rotate(-90deg);
+    }
+  }
+  // .product-cart__shop
+  &__shop {
+    font-size: rem(16);
+    opacity: 0;
+    transition: opacity 0.5s ease 0s;
+  }
+  // .product-cart__footer
+  &__footer {
+    display: flex;
+    column-gap: rem(28);
+  }
+  // .product-cart__price
+  &__price {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  // .product-cart__new
+  &__new {
+    display: none;
+    color: #ff3232;
+    .product-cart_new & {
+      display: inline-block;
     }
   }
 }
