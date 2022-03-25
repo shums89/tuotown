@@ -145,14 +145,15 @@ body {
 .page {
 	// .page__main-slider
 	&__main-slider {
-		margin-bottom: rem(60);
+		@include adaptiveValue("margin-bottom", 60, 30, 768, 320, 1);
 	}
 	// .page__categories
 	&__categories {
-		margin-bottom: rem(88);
+		@include adaptiveValue("margin-bottom", 88, 60, 1200, 768, 2);
+		@include adaptiveValue("margin-bottom", 60, 30, 768, 320);
 	}
 	// .page__products-preview
 	&__products-preview {
-		margin-bottom: rem(50);
+		@include adaptiveValue("margin-bottom", 60, 30, 768, 320, 1);
 	}
 }

@@ -27,11 +27,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: rem(28) rem(42) rem(28) rem(26);
+    @include adaptiveValue("gap", 20, 10, 1200, 768, 1);
+    @include adaptiveValue("padding", 28, 20, 1200, 768, 2);
+    @include adaptiveValue("padding", 20, 15, 768, 320);
+    @include adaptiveValue("padding-bottom", 28, 22, 1200, 768, 2);
+    @include adaptiveValue("padding-bottom", 22, 20, 768, 320);
+
     & span {
       font-weight: 600;
-      font-size: rem(17);
-      line-height: 1.65;
+      @include adaptiveValue("font-size", 16, 14, 1200, 768, 1);
+      @include adaptiveValue("line-height", 20, 17, 1200, 768, 1);
     }
     &::before {
       order: 2;
@@ -43,7 +48,7 @@
           text-decoration: underline;
         }
         &::before {
-          font-size: rem(15);
+          font-size: rem(12);
         }
       }
     }
@@ -61,22 +66,23 @@
 .product-cart {
   position: relative;
   height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: flex;
+  flex-direction: column;
   gap: rem(13);
   @media (any-hover: hover) {
     &:hover .product-cart__shop-link {
       background-color: #c80000;
     }
   }
-  // .product-cart__image
-  &__image {
-    flex: 0 0 auto;
+  // .product-cart__image-content
+  &__image-content {
     background-color: $mainColorDarkGrayBg;
     border-radius: 14px;
     overflow: hidden;
-    height: rem(412);
-    padding: rem(11);
+    height: 100%;
+    @include adaptiveValue("min-height", 412, 378, 1200, 768, 2);
+    @include adaptiveValue("min-height", 378, 190, 768, 320);
+    @include adaptiveValue("padding", 11, 8, 768, 320, 1);
     & img {
       transition: transform 1s ease 0s;
     }
@@ -85,13 +91,10 @@
         transform: scale(1.2);
       }
     }
+    @media (max-width: em(720)) {
+      padding-bottom: rem(67);
+    }
   }
-  // .product-cart__image-ibg
-  &__image-ibg {
-    display: block;
-    padding-bottom: percent(412, 286);
-  }
-
   // .product-cart__body
   &__body {
     display: flex;
@@ -99,9 +102,18 @@
     font-weight: 500;
     font-size: rem(14);
     line-height: 2;
+    @media (max-width: em(720)) {
+      position: absolute;
+      bottom: rem(10);
+      left: rem(10);
+      right: rem(15);
+      font-weight: 400;
+    }
   }
   // .product-cart__title
   &__title {
+    @include adaptiveValue("font-size", 14, 11, 768, 320, 1);
+    @include adaptiveValue("line-height", 28, 13, 768, 320, 1);
   }
   // .product-cart__title-link
   &__title-link {
@@ -111,11 +123,34 @@
       }
     }
   }
+  // .product-cart__footer
+  &__footer {
+    display: flex;
+    align-items: center;
+    column-gap: rem(28);
+    @media (max-width: em(720)) {
+      column-gap: rem(10);
+    }
+  }
+  // .product-cart__price
+  &__price {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  // .product-cart__new
+  &__new {
+    display: none;
+    color: #ff3232;
+    .product-cart_new & {
+      display: inline-block;
+      @media (max-width: em(720)) {
+        font-size: rem(11);
+      }
+    }
+  }
   // .product-cart__shop-link
   &__shop-link {
     position: absolute;
-    top: rem(24);
-    right: rem(27);
     height: rem(37);
     width: rem(37);
     border-radius: 18px;
@@ -126,6 +161,8 @@
     padding: rem(11);
     overflow: hidden;
     transition: width 0.5s ease 0s, background-color 0.5s ease 0s;
+    @include adaptiveValue("top", 24, 9, 768, 320, 1);
+    @include adaptiveValue("right", 24, 9, 768, 320, 1);
     @media (any-hover: hover) {
       &:hover {
         width: rem(72);
@@ -139,7 +176,6 @@
   &__plus {
     flex: 0 0 rem(15);
     position: relative;
-    // display: inline-block;
     height: rem(15);
     &::before,
     &::after {
@@ -160,22 +196,5 @@
     font-size: rem(16);
     opacity: 0;
     transition: opacity 0.5s ease 0s;
-  }
-  // .product-cart__footer
-  &__footer {
-    display: flex;
-    column-gap: rem(28);
-  }
-  // .product-cart__price
-  &__price {
-    color: rgba(255, 255, 255, 0.5);
-  }
-  // .product-cart__new
-  &__new {
-    display: none;
-    color: #ff3232;
-    .product-cart_new & {
-      display: inline-block;
-    }
   }
 }
