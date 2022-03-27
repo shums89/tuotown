@@ -7,6 +7,27 @@
   @include adaptiveValue("padding-right", 54, 0, 768, 320);
 }
 //====================================================================
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  @include adaptiveValue("row-gap", 25, 30, 1200, 768, 1);
+  @include adaptiveValue("column-gap", 18, 30, 1200, 768, 2);
+  @include adaptiveValue("column-gap", 30, 14, 768, 320);
+  @media (max-width: em(1100)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  // .products__item
+  &__item {
+    height: 100%;
+    @include adaptiveValue("min-height", 481, 453, 1200, 768, 2);
+    @include adaptiveValue("min-height", 453, 190, 768, 320);
+    // .products__item_span2
+    &_span2 {
+      grid-column: span 2;
+    }
+  }
+}
+//====================================================================
 .intro-collection {
   position: relative;
   height: 100%;
