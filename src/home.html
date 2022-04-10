@@ -81,9 +81,9 @@
 					</div>
 				</div>
 			</section>
-			<div class="page__categories categories">
+			<section class="page__categories categories">
 				<div class="categories__container categories__container_narrow">
-					<div class="categories__wrapper_main">
+					<div class="categories__wrapper categories__wrapper_main">
 						<ul class="categories__list">
 							<li class="categories__item">
 								<a href="" class="categories__link _icon-knife">
@@ -108,8 +108,8 @@
 						</ul>
 					</div>
 				</div>
-			</div>
-			<div class="page__products-preview products-preview">
+			</section>
+			<section class="page__products-preview products-preview">
 				<div class="products-preview__container products-preview__container_narrow">
 					<div class="products-preview__wrapper products-preview__wrapper_main products">
 						<div class="products__item products__item_span2">
@@ -172,7 +172,14 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
+			<section class="page__mailing mailing-block">
+				<div class="mailing-block__container mailing-block__container_narrow">
+					<div class="mailing-block__wrapper mailing-block__wrapper_main">
+						@@include('html/_mailing.htm',{})
+					</div>
+				</div>
+			</section>
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>

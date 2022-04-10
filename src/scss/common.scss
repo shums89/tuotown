@@ -219,3 +219,59 @@
     transition: opacity 0.5s ease 0s;
   }
 }
+//====================================================================
+.mailing {
+  // .mailing__title
+  &__title {
+    font-family: "Jura";
+    font-weight: 500;
+    line-height: 1.16;
+    text-align: center;
+    margin-bottom: rem(30);
+    @include adaptiveValue("font-size", 24, 18, 1200, 768, 1);
+    @media (min-width: $tablet) {
+      text-transform: uppercase;
+    }
+  }
+  // .mailing__form
+  &__form {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: rem(10);
+    margin: 0 auto;
+    width: rem(276);
+    height: rem(60);
+    padding: rem(10) rem(22);
+    border-radius: 6px;
+    background-color: $mainColorDarkGrayBg;
+    @include adaptiveValue("font-size", 16, 14, 768, 320, 1);
+    & .form__error {
+      position: absolute;
+      bottom: rem(-20);
+      font-size: rem(15);
+      color: red;
+    }
+  }
+  // .mailing__input
+  &__input {
+    flex: 1 1 auto;
+    height: 100%;
+    background-color: inherit;
+    position: relative;
+    color: #fff;
+    border-radius: 0.1875rem 0 0 0.1875rem;
+    border-right: none;
+    &:focus {
+      outline: 0;
+    }
+  }
+  // .mailing__button
+  &__button {
+    &::before {
+      font-size: rem(8);
+      transform: rotate(-90deg);
+    }
+  }
+}

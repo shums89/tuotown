@@ -18,6 +18,10 @@ textarea {
 	}
 	&._error {
 	}
+	&:focus {
+		outline: 0;
+		border: 2px solid red;
+	}
 }
 textarea.input {
 	resize: none;
