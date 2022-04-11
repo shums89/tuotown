@@ -7,6 +7,11 @@
   @include adaptiveValue("padding-right", 54, 0, 768, 320);
 }
 //====================================================================
+[class*="_top-line"] {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  @include adaptiveValue("padding-top", 60, 30, 768, 320, 1);
+}
+//====================================================================
 .products {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -239,6 +244,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     column-gap: rem(10);
     margin: 0 auto;
     width: rem(276);

@@ -158,7 +158,10 @@ body {
 	}
 	// .page__mailing
 	&__mailing {
-		@include adaptiveValue("margin-bottom", 49, 60, 1200, 768, 2);
-		@include adaptiveValue("margin-bottom", 60, 30, 768, 320);
+		@include adaptiveValue("margin-bottom", 60, 30, 768, 320, 1);
+	}
+	// .page__news-popular
+	&__news-popular {
+		@include adaptiveValue("margin-bottom", 60, 30, 768, 320, 1);
 	}
 }
