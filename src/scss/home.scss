@@ -298,3 +298,86 @@
   &__body {
   }
 }
+//====================================================================
+.about {
+  // .about__container
+  &__container {
+    // .about__container_narrow
+    &_narrow {
+    }
+  }
+  // .about__wrapper
+  &__wrapper {
+    // .about__wrapper_main
+    &_main {
+    }
+  }
+  // .about__row
+  &__row {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 39, 30, 1200, 768, 1);
+      @include adaptiveValue("margin-bottom", 30, 20, 768, 320);
+    }
+    @media (min-width: em(600)) {
+      display: flex;
+      @include adaptiveValue("column-gap", 80, 30, 1200, 768, 1);
+    }
+  }
+  // .about__column
+  &__column {
+    flex: 1 0 33%;
+    display: flex;
+    flex-direction: column;
+    // .about__column_narrow
+    &_narrow {
+      max-width: rem(672);
+    }
+    // .about__column_last
+    &_last {
+      order: 2;
+    }
+    & img {
+      border-radius: rem(14);
+      width: 100%;
+      @media (max-width: em(600)) {
+        @include adaptiveValue("margin-bottom", 25, 15, 768, 320);
+      }
+    }
+  }
+  // .about__title
+  &__title {
+    font-family: "Jura";
+    font-weight: 500;
+    line-height: 1.2;
+    @include adaptiveValue("margin-bottom", 51, 25, 1200, 768, 2);
+    @include adaptiveValue("margin-bottom", 25, 15, 768, 320);
+    @include adaptiveValue("font-size", 35, 24, 1200, 768, 2);
+    @include adaptiveValue("font-size", 24, 18, 768, 320);
+  }
+  // .about__text
+  &__text {
+    line-height: 1.38;
+    color: $mainColorDarkGrayText;
+    @include adaptiveValue("font-size", 16, 14, 1200, 768, 2);
+    @include adaptiveValue("font-size", 14, 11, 768, 320);
+    &:not(:nth-last-of-type(1)) {
+      @include adaptiveValue("margin-bottom", 27, 15, 1200, 768, 2);
+      @include adaptiveValue("margin-bottom", 15, 10, 768, 320);
+    }
+  }
+  // .about__subtitle
+  &__subtitle {
+    margin-top: rem(43);
+    font-family: "Jura";
+    font-weight: 600;
+    line-height: 1.29;
+    max-width: rem(700);
+    @include adaptiveValue("font-size", 28, 24, 1200, 768, 2);
+    @include adaptiveValue("font-size", 24, 18, 768, 320);
+    @media (max-width: em(768)) {
+      order: -1;
+      margin-top: 0;
+      @include adaptiveValue("margin-bottom", 25, 15, 768, 320);
+    }
+  }
+}
