@@ -169,4 +169,8 @@ body {
 	&__about {
 		@include adaptiveValue("margin-bottom", 60, 30, 768, 320, 1);
 	}
+	// .page__articles
+	&__articles {
+		@include adaptiveValue("margin-bottom", 60, 30, 768, 320, 1);
+	}
 }
