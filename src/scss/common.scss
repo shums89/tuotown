@@ -1,6 +1,6 @@
 // Заголовки, общие БЄМ блоки и проче...
 //====================================================================
-[class*="__wrapper_main"] {
+[class*="__wrapper_home"] {
   @include adaptiveValue("padding-left", 0, 54, 1200, 768, 2);
   @include adaptiveValue("padding-left", 54, 0, 768, 320);
   @include adaptiveValue("padding-right", 0, 54, 1200, 768, 2);
