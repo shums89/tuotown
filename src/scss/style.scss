@@ -99,7 +99,7 @@ body {
 			padding: 0 rem(math.div($containerPadding, 2));
 		}
 	}
-	.body_home [class*="__container"] {
+	.wrapper_home [class*="__container"] {
 		max-width: rem(1200);
 	}
 } @else {
