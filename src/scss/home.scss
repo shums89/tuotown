@@ -319,6 +319,10 @@
       display: flex;
       @include adaptiveValue("column-gap", 80, 30, 1200, 768, 1);
     }
+    // .about__row_reverse
+    &_reverse {
+      flex-direction: row-reverse;
+    }
   }
   // .about__column
   &__column {
@@ -328,13 +332,12 @@
     &_narrow {
       max-width: rem(672);
     }
-    // .about__column_last
-    &_last {
-      order: 2;
-    }
     & img {
       border-radius: rem(14);
-      @media (max-width: em(600)) {
+      @include adaptiveValue("width", 300, 236, 768, 600, 1);
+      @media (max-width: em(599)) {
+        width: rem(290);
+        align-self: center;
         @include adaptiveValue("margin-bottom", 25, 15, 768, 320);
       }
     }
