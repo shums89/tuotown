@@ -113,6 +113,7 @@
 		width: 100%;
 		z-index: 2;
 		background-color: rgba(0, 0, 0, 0.6);
+		transition: background-color 0.3s ease 0s;
 	}
 	// .menu__icon
 	&__icon {
@@ -165,26 +166,27 @@
 		background-color: $mainColorDarkGray;
 		overflow: hidden;
 		transition: left 0.3s ease 0s;
+		&::before,
+		&::after {
+			position: absolute;
+			content: "";
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -2;
+		}
 		&::before {
 			background: url("@img/main-block/bg.png") center 0 no-repeat;
 			background-size: cover;
 			filter: blur(20px);
 		}
 		&::after {
+			width: calc(100% + 5px); // из-за размытия blur
 			background-color: rgba(0, 0, 0, 0.64);
 		}
 		.menu-open & {
 			left: 0;
-			&::before,
-			&::after {
-				position: absolute;
-				content: "";
-				left: 0;
-				top: 0;
-				width: 100%;
-				height: 100%;
-				z-index: -2;
-			}
 		}
 		@media (max-width: em(444)) {
 			width: 100%;
