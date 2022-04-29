@@ -1,0 +1,35 @@
+.banner {
+  // .banner__img-ibg
+  &__img-ibg {
+    height: rem(610);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    img {
+      z-index: -2;
+    }
+  }
+  // .banner__container
+  &__container {
+  }
+  // .banner__title
+  &__title {
+    font-family: "Jura";
+    font-weight: 500;
+    font-size: rem(32);
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: rem(40);
+    text-align: center;
+    @include adaptiveValue("font-size", 32, 24, 768, 320, 1);
+  }
+  // .banner__subtitle
+  &__subtitle {
+    display: inline-block;
+    font-size: rem(16);
+    line-height: rem(20);
+    text-align: center;
+    @include adaptiveValue("font-size", 16, 14, 768, 320, 1);
+  }
+}
