@@ -26,7 +26,7 @@
 	z-index: 1;
 }
 /* Wrapper for all connect elements.
- */
+	*/
 .noUi-connects {
 	overflow: hidden;
 	z-index: 0;
@@ -47,14 +47,14 @@
 	transform-style: flat;
 }
 /* Offset direction
- */
+	*/
 .noUi-txt-dir-rtl.noUi-horizontal .noUi-origin {
 	left: 0;
 	right: auto;
 }
 /* Give origins 0 height/width so they don't interfere with clicking the
- * connect elements.
- */
+	* connect elements.
+	*/
 .noUi-vertical .noUi-origin {
 	top: -100%;
 	width: 0;
@@ -78,15 +78,19 @@
 	cursor: inherit !important;
 }
 /* Slider size and handle placement;
- */
+	*/
 .noUi-horizontal {
-	height: 18px;
+	height: rem(2);
+	background-color: $mainColorDarkGrayBg;
 }
 .noUi-horizontal .noUi-handle {
-	width: 34px;
-	height: 28px;
-	right: -17px;
-	top: -6px;
+	width: rem(18);
+	height: rem(18);
+	right: rem(-9);
+	top: rem(-9);
+	border-radius: 50%;
+
+	background: $mainColorDarkGrayBg;
 }
 .noUi-vertical {
 	width: 18px;
@@ -102,22 +106,22 @@
 	right: auto;
 }
 /* Styling;
- * Giving the connect element a border radius causes issues with using transform: scale
- */
+	* Giving the connect element a border radius causes issues with using transform: scale
+	*/
 .noUi-target {
-	background: #fafafa;
+	background-color: $mainColorDarkGrayBg;
 	border-radius: 4px;
-	border: 1px solid #d3d3d3;
-	box-shadow: inset 0 1px 1px #f0f0f0, 0 3px 6px -5px #bbb;
+	// border: 1px solid #d3d3d3;
+	// box-shadow: inset 0 1px 1px #f0f0f0, 0 3px 6px -5px #bbb;
 }
 .noUi-connects {
 	border-radius: 3px;
 }
 .noUi-connect {
-	background: #3fb8af;
+	background-color: rgba(255, 255, 255, 0.3);
 }
 /* Handles and cursors;
- */
+	*/
 .noUi-draggable {
 	cursor: ew-resize;
 }
@@ -125,43 +129,21 @@
 	cursor: ns-resize;
 }
 .noUi-handle {
-	border: 1px solid #d9d9d9;
+	border: 3px solid $mainColorDarkGrayBg;
 	border-radius: 3px;
 	background: #fff;
 	cursor: default;
-	box-shadow: inset 0 0 1px #fff, inset 0 1px 7px #ebebeb, 0 3px 6px -3px #bbb;
+	box-shadow: 0 0 1px #fff;
+	// box-shadow: inset 0 0 1px #fff, inset 0 1px 7px #ebebeb, 0 3px 6px -3px #bbb;
 }
 .noUi-active {
-	box-shadow: inset 0 0 1px #fff, inset 0 1px 7px #ddd, 0 3px 6px -3px #bbb;
+	box-shadow: 0 0 1px #fff, 0 1px 7px rgba(255, 255, 255, 0.3), 0 3px 6px -3px rgba(255, 255, 255, 0.3);
 }
 /* Handle stripes;
- */
-.noUi-handle:before,
-.noUi-handle:after {
-	content: "";
-	display: block;
-	position: absolute;
-	height: 14px;
-	width: 1px;
-	background: #e8e7e6;
-	left: 14px;
-	top: 6px;
-}
-.noUi-handle:after {
-	left: 17px;
-}
-.noUi-vertical .noUi-handle:before,
-.noUi-vertical .noUi-handle:after {
-	width: 14px;
-	height: 1px;
-	left: 6px;
-	top: 14px;
-}
-.noUi-vertical .noUi-handle:after {
-	top: 17px;
-}
+	*/
+
 /* Disabled state;
- */
+	*/
 [disabled] .noUi-connect {
 	background: #b8b8b8;
 }
@@ -171,8 +153,8 @@
 	cursor: not-allowed;
 }
 /* Base;
- *
- */
+	*
+	*/
 .noUi-pips,
 .noUi-pips * {
 	box-sizing: border-box;
@@ -182,8 +164,8 @@
 	color: #999;
 }
 /* Values;
- *
- */
+	*
+	*/
 .noUi-value {
 	position: absolute;
 	white-space: nowrap;
@@ -194,8 +176,8 @@
 	font-size: 10px;
 }
 /* Markings;
- *
- */
+	*
+	*/
 .noUi-marker {
 	position: absolute;
 	background: #ccc;
@@ -207,8 +189,8 @@
 	background: #aaa;
 }
 /* Horizontal layout;
- *
- */
+	*
+	*/
 .noUi-pips-horizontal {
 	padding: 10px 0;
 	height: 80px;
@@ -234,8 +216,8 @@
 	height: 15px;
 }
 /* Vertical layout;
- *
- */
+	*
+	*/
 .noUi-pips-vertical {
 	padding: 0 10px;
 	height: 100%;

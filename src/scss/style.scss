@@ -178,4 +178,8 @@ body {
 	&__banner {
 		@include adaptiveValue("margin-bottom", 50, 30, 768, 320, 1);
 	}
+	// .page__catalog
+	&__catalog {
+		@include adaptiveValue("margin-bottom", 100, 30, 768, 320, 1);
+	}
 }
