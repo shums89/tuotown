@@ -180,6 +180,12 @@ body {
 	}
 	// .page__catalog
 	&__catalog {
-		@include adaptiveValue("margin-bottom", 100, 30, 768, 320, 1);
+		@include adaptiveValue("margin-bottom", 100, 60, 1200, 768, 2);
+		@include adaptiveValue("margin-bottom", 60, 30, 768, 320);
+	}
+	// .page__slider-categories
+	&__slider-categories {
+		@include adaptiveValue("margin-bottom", 90, 60, 1200, 768, 2);
+		@include adaptiveValue("margin-bottom", 60, 30, 768, 320);
 	}
 }

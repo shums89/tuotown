@@ -78,7 +78,7 @@
     text-transform: uppercase;
     text-align: center;
     border-radius: rem(8);
-    @include adaptiveValue("margin-bottom", 40, 25, 768, 320, 1);
+    @include adaptiveValue("margin-bottom", 40, 25, 1200, 768, 1);
     @include adaptiveValue("font-size", 18, 14, 768, 320, 1);
     @media (max-width: $tablet) {
       display: block;
@@ -96,8 +96,8 @@
   // .filter-catalog__item
   &__item {
     border-bottom: 1px solid #4f4f4f;
-    @include adaptiveValue("padding-bottom", 40, 25, 768, 320, 1);
-    @include adaptiveValue("margin-bottom", 40, 25, 768, 320, 1);
+    @include adaptiveValue("padding-bottom", 40, 25, 1200, 768, 1);
+    @include adaptiveValue("margin-bottom", 40, 25, 1200, 768, 1);
   }
   // .filter-catalog__title
   &__subtitle {
@@ -107,7 +107,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: rem(16);
-    line-height: 1.25;
+    line-height: 1.6;
     &::before {
       font-size: rem(8);
       transition: transform 0.7s ease 0s;
@@ -120,7 +120,7 @@
   }
   // .filter-catalog__body
   &__body {
-    @include adaptiveValue("padding-top", 28, 15, 768, 320, 1);
+    @include adaptiveValue("padding-top", 28, 15, 1200, 768, 1);
   }
   // .filter-catalog__checkbox
   &__checkbox {
@@ -163,5 +163,52 @@
   }
   // .checkbox__text
   &__text {
+  }
+}
+//====================================================================
+.slider-categories {
+  border-top: 1px solid #535353;
+  border-bottom: 1px solid #535353;
+  // .slider-categories__container
+  &__container {
+    padding-top: rem(30);
+    padding-bottom: rem(30);
+  }
+  // .slider-categories__slider
+  &__slider {
+  }
+  // .slider-categories__swiper
+  &__swiper {
+  }
+  // .slider-categories__slide
+  &__slide {
+    flex-basis: rem(144);
+  }
+  // .slider-categories__image-ibg
+  &__image-ibg {
+    width: rem(144);
+    height: rem(70);
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    border-radius: rem(15);
+    overflow: hidden;
+    & img {
+      z-index: -2;
+      transition: transform 1s ease 0s;
+    }
+  }
+  // .slider-categories__link
+  &__link {
+    font-weight: 600;
+    line-height: 1.25;
+    text-align: center;
+    @include adaptiveValue("font-size", 16, 14, 1200, 768, 1);
+    &:hover {
+      text-decoration: underline;
+      & + img {
+        transform: scale(1.1);
+      }
+    }
   }
 }
