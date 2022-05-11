@@ -232,8 +232,8 @@
     font-weight: 500;
     line-height: 1.16;
     text-align: center;
-    margin-bottom: rem(30);
     @include adaptiveValue("font-size", 24, 18, 1200, 768, 1);
+    @include adaptiveValue("margin-bottom", 30, 20, 768, 320, 1);
     @media (min-width: $tablet) {
       text-transform: uppercase;
     }
@@ -248,11 +248,11 @@
     column-gap: rem(10);
     margin: 0 auto;
     width: rem(276);
-    height: rem(60);
     padding: rem(10) rem(22);
     border-radius: 6px;
     background-color: $mainColorDarkGrayBg;
     @include adaptiveValue("font-size", 16, 14, 768, 320, 1);
+    @include adaptiveValue("height", 60, 50, 768, 320, 1);
     & .form__error {
       position: absolute;
       bottom: rem(-20);

@@ -143,6 +143,7 @@ body {
 // Подключение стилей отдельных страниц
 @import "home";
 @import "catalog";
+@import "service";
 
 .page {
 	// .page__main-slider
@@ -185,6 +186,11 @@ body {
 	}
 	// .page__slider-categories
 	&__slider-categories {
+		@include adaptiveValue("margin-bottom", 90, 60, 1200, 768, 2);
+		@include adaptiveValue("margin-bottom", 60, 30, 768, 320);
+	}
+	// .page__service
+	&__service {
 		@include adaptiveValue("margin-bottom", 90, 60, 1200, 768, 2);
 		@include adaptiveValue("margin-bottom", 60, 30, 768, 320);
 	}
