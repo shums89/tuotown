@@ -144,6 +144,7 @@ body {
 @import "home";
 @import "catalog";
 @import "service";
+@import "product";
 
 .page {
 	// .page__main-slider
@@ -193,5 +194,10 @@ body {
 	&__service {
 		@include adaptiveValue("margin-bottom", 90, 60, 1200, 768, 2);
 		@include adaptiveValue("margin-bottom", 60, 30, 768, 320);
+	}
+	// .page__product-banner
+	&__product-banner {
+		@include adaptiveValue("margin-bottom", 90, 40, 1200, 768, 2);
+		@include adaptiveValue("margin-bottom", 40, 30, 768, 320);
 	}
 }

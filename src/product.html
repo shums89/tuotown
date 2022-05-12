@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Товар"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="page__product-banner product-banner">
+				<div class="product-banner__image-ibg">
+					<img src="@img/page-product/banner.png" alt="Картинка">
+					<div class="product-banner__container">
+						<h2 class="product-banner__title">Исключительное качество без компромиссов</h2>
+						<div class="product-banner__text">Ножи «Tuotown» – это главный инструмент поваров и секрет кулинарного мастерства</div>
+						<button class="product-banner__button button">Купить</button>
+						<span class="product-banner__price">48 тыс. р.</span>
+					</div>
+				</div>
+			</section>
+			<section class="page__mailing mailing-block">
+				<div class="mailing-block__container">
+					<div class="mailing-block__wrapper mailing-block__wrapper_home">
+						@@include('html/_mailing.htm',{})
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
+</html>
