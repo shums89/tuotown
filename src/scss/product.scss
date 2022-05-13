@@ -40,3 +40,57 @@
   &__price {
   }
 }
+//====================================================================
+.product-block {
+  // .product-block__container
+  &__container {
+  }
+  // .product-block__row
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: rem(20);
+    @include adaptiveValue("column-gap", 140, 30, 1200, 768, 1);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 89, 30, 1200, 768, 1);
+    }
+    // .product-block__row_reverse
+    &_reverse {
+      flex-direction: row-reverse;
+    }
+  }
+  // .product-block__image-ibg
+  &__image-ibg {
+    flex-shrink: 0;
+    width: 100%;
+    border-radius: rem(15);
+    overflow: hidden;
+    @include adaptiveValue("max-width", 630, 300, 1200, 768, 1);
+    @include adaptiveValue("height", 635, 302, 1200, 768, 2);
+    @include adaptiveValue("height", 302, 292, 768, 320);
+  }
+  // .product-block__text-block
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include adaptiveValue("max-width", 410, 300, 1200, 768, 1);
+    @include adaptiveValue("gap", 24, 10, 768, 320, 1);
+  }
+  // .product-block__title
+  &__title {
+    font-family: "Jura";
+    font-weight: 500;
+    line-height: 1.16;
+    @include adaptiveValue("font-size", 24, 18, 768, 320, 1);
+    @media (min-width: $mobile) {
+      text-transform: uppercase;
+    }
+  }
+  // .product-block__text
+  &__text {
+    line-height: 1.25;
+    @include adaptiveValue("font-size", 16, 14, 1200, 768, 2);
+    @include adaptiveValue("font-size", 14, 12, 768, 320);
+  }
+}

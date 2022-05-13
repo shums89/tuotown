@@ -200,4 +200,8 @@ body {
 		@include adaptiveValue("margin-bottom", 90, 40, 1200, 768, 2);
 		@include adaptiveValue("margin-bottom", 40, 30, 768, 320);
 	}
+	// .page__product-block
+	&__product-block {
+		@include adaptiveValue("margin-bottom", 90, 72, 768, 320, 1);
+	}
 }
