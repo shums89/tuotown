@@ -202,6 +202,10 @@ body {
 	}
 	// .page__product-block
 	&__product-block {
-		@include adaptiveValue("margin-bottom", 90, 72, 768, 320, 1);
+		@include adaptiveValue("margin-bottom", 90, 60, 768, 320, 1);
+	}
+	// .page__about-product
+	&__about-product {
+		@include adaptiveValue("margin-bottom", 90, 60, 768, 320, 1);
 	}
 }

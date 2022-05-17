@@ -94,3 +94,192 @@
     @include adaptiveValue("font-size", 14, 12, 768, 320);
   }
 }
+//====================================================================
+.about-product {
+  background-color: $mainColorDarkGrayBg;
+  @include adaptiveValue("padding-top", 90, 30, 768, 320, 1);
+  @include adaptiveValue("padding-bottom", 90, 30, 768, 320, 1);
+  & > *:not(:last-child) {
+    @include adaptiveValue("margin-bottom", 90, 30, 768, 320, 1);
+  }
+  // .about-product__gallery
+  &__gallery {
+  }
+  // .about-product__video
+  &__video {
+  }
+  // .about-product__charactary
+  &__charactary {
+  }
+}
+.gallery-product {
+}
+.product-gallery {
+  // .product-gallery__slider
+  &__slider {
+  }
+  // .product-gallery__swiper
+  &__swiper {
+  }
+  // .product-gallery__slide
+  &__slide {
+  }
+  // .product-gallery__image-ibg
+  &__image-ibg {
+    width: rem(1230);
+    height: rem(700);
+    margin-left: rem(30);
+  }
+}
+.video-product {
+  height: rem(1020);
+}
+.charactary-product {
+  // .charactary-product__container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $tablet) {
+      height: rem(620);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+  }
+  // .charactary-product__title
+  &__title {
+    text-align-last: left;
+    margin-bottom: rem(14);
+    display: flex;
+    justify-content: center;
+    @include adaptiveValue("margin-bottom", 60, 40, 768, 320, 1);
+    @media (min-width: $tablet) {
+      display: none;
+    }
+    & span {
+      position: relative;
+      font-family: "Jura";
+      font-weight: 500;
+      line-height: 1.16;
+      @include adaptiveValue("font-size", 24, 18, 768, 320, 1);
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        bottom: rem(-6);
+        background-color: #c80000;
+      }
+    }
+  }
+  // .charactary-product__image
+  &__image {
+    align-self: center;
+    @include adaptiveValue("margin-bottom", 60, 30, 768, 320, 1);
+    @media (min-width: $tablet) {
+      margin-right: rem(30);
+      margin-bottom: 0;
+    }
+    & img {
+      border-radius: 15px;
+      overflow: hidden;
+      height: auto;
+      object-fit: contain;
+      max-height: rem(380);
+      max-width: 100%;
+      @media (min-width: $tablet) {
+        max-height: initial;
+      }
+    }
+  }
+  // .charactary-product__table-product
+  &__table-product {
+  }
+}
+.table-product {
+  // .table-product__table
+  &__table {
+    margin-bottom: rem(30);
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    @media (min-width: $tablet) {
+      width: rem(419);
+    }
+  }
+  // .table-product__title
+  &__title {
+    text-align-last: left;
+    margin-bottom: rem(14);
+    display: none;
+    @media (min-width: $tablet) {
+      display: block;
+    }
+    & span {
+      position: relative;
+      font-family: "Jura";
+      font-weight: 500;
+      font-size: rem(24);
+      line-height: 1.16;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        bottom: rem(-6);
+        background-color: #c80000;
+      }
+    }
+  }
+  // .table-product__body
+  &__body {
+  }
+  // .table-product__row
+  &__row {
+    line-height: 1.25;
+    border-bottom: 1px solid #4f4f4f;
+    @include adaptiveValue("font-size", 16, 14, 768, 320, 1);
+  }
+  // .table-product__label
+  // .table-product__value
+  &__label,
+  &__value {
+    padding-top: rem(15);
+    padding-bottom: rem(10);
+  }
+  // .table-product__label
+  &__label {
+  }
+  // .table-product__value
+  &__value {
+    text-align: right;
+  }
+  // .table-product__more
+  &__more {
+    position: relative;
+    font-weight: 600;
+    font-size: rem(14);
+    line-height: 1.21;
+    text-transform: uppercase;
+    color: $mainColorDarkGrayText;
+    padding-left: rem(39);
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: rem(5);
+      width: rem(15);
+      height: 1px;
+      background-color: $mainColorDarkGrayText;
+    }
+    &::after {
+      transform: rotate(-90deg);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
