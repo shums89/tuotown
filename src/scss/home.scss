@@ -410,7 +410,7 @@
   }
   // .articles__item
   &__item {
-    height: 465px;
+    @include adaptiveValue("height", 465, 300, 768, 320, 1);
     @media (min-width: $mobile) {
       flex: 1 1 calc(33% - 30px);
       min-width: 330px;

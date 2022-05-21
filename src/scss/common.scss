@@ -289,10 +289,11 @@
   overflow: hidden;
   // .article__image-ibg
   &__image-ibg {
+    position: relative;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
     & img {
       z-index: -2;
@@ -301,6 +302,9 @@
   }
   // .article__date
   &__date {
+    position: absolute;
+    top: 0;
+    right: 0;
     text-align: right;
     padding: rem(23) rem(36);
     @include adaptiveValue("font-size", 14, 11, 768, 320, 1);
