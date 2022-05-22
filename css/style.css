@@ -1242,10 +1242,9 @@ textarea.input {
 }
 
 .no-webp .menu__body::before{
-  background: url("../img/main-block/bg.png") center 0 no-repeat; }
+  background: url("../img/main-block/bg.jpg") center/cover no-repeat; }
 
 .menu__body::before {
-  background-size: cover;
   -webkit-filter: blur(20px);
           filter: blur(20px);
 }
@@ -4616,4 +4615,4 @@ textarea.input {
   }
 }
 
-.webp .menu__body::before{ background: url(../img/main-block/bg.webp) center 0 no-repeat; }
+.webp .menu__body::before{ background: url(../img/main-block/bg.webp) center/cover no-repeat; }
