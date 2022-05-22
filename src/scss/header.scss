@@ -177,8 +177,7 @@
 			z-index: -2;
 		}
 		&::before {
-			background: url("@img/main-block/bg.png") center 0 no-repeat;
-			background-size: cover;
+			background: url("@img/main-block/bg.jpg") center/cover no-repeat;
 			filter: blur(20px);
 		}
 		&::after {
