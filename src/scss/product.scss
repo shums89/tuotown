@@ -2,7 +2,7 @@
   // .product-banner__image-ibg
   &__image-ibg {
     background: linear-gradient(268.39deg, rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.85));
-    @include adaptiveValue("height", 590, 540, 768, 320, 1);
+    @include adaptiveValue("height", 590, 420, 768, 320, 1);
     img {
       z-index: -2;
     }
@@ -97,10 +97,13 @@
 //====================================================================
 .about-product {
   background-color: $mainColorDarkGrayBg;
-  @include adaptiveValue("padding-top", 90, 30, 768, 320, 1);
-  @include adaptiveValue("padding-bottom", 90, 30, 768, 320, 1);
+  @include adaptiveValue("padding-top", 90, 60, 1200, 768, 2);
+  @include adaptiveValue("padding-top", 60, 30, 768, 320);
+  @include adaptiveValue("padding-bottom", 90, 60, 1200, 768, 2);
+  @include adaptiveValue("padding-bottom", 60, 30, 768, 320);
   & > *:not(:last-child) {
-    @include adaptiveValue("margin-bottom", 90, 30, 768, 320, 1);
+    @include adaptiveValue("margin-bottom", 90, 60, 1200, 768, 2);
+    @include adaptiveValue("margin-bottom", 60, 30, 768, 320);
   }
   // .about-product__gallery
   &__gallery {
@@ -126,13 +129,16 @@
   }
   // .product-gallery__image-ibg
   &__image-ibg {
-    width: rem(1230);
-    height: rem(700);
-    margin-left: rem(30);
+    @include adaptiveValue("margin-left", 30, 7, 768, 320, 1);
+    @include adaptiveValue("width", 1230, 629, 1200, 768, 2);
+    @include adaptiveValue("width", 629, 293, 768, 320);
+    @include adaptiveValue("height", 700, 354, 1200, 768, 2);
+    @include adaptiveValue("height", 354, 166, 768, 320);
   }
 }
 .video-product {
-  height: rem(1020);
+  @include adaptiveValue("height", 1020, 408, 1200, 768, 2);
+  @include adaptiveValue("height", 408, 170, 768, 320);
 }
 .charactary-product {
   // .charactary-product__container
@@ -185,8 +191,8 @@
       overflow: hidden;
       height: auto;
       object-fit: contain;
-      max-height: rem(380);
       max-width: 100%;
+      @include adaptiveValue("max-height", 380, 219, 768, 320, 1);
       @media (min-width: $tablet) {
         max-height: initial;
       }

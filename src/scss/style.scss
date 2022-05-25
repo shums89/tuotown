@@ -202,7 +202,8 @@ body {
 	}
 	// .page__product-block
 	&__product-block {
-		@include adaptiveValue("margin-bottom", 90, 60, 768, 320, 1);
+		@include adaptiveValue("margin-bottom", 90, 60, 1200, 768, 2);
+		@include adaptiveValue("margin-bottom", 60, 30, 768, 320);
 	}
 	// .page__about-product
 	&__about-product {

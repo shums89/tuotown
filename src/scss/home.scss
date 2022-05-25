@@ -2,7 +2,8 @@
   // .main-slider__slider
   &__slider {
     width: 100vw;
-    @include adaptiveValue("height", 590, 540, 768, 320, 1);
+    @include adaptiveValue("height", 590, 540, 1200, 768, 2);
+    @include adaptiveValue("height", 540, 490, 768, 320);
   }
   // .main-slider__swiper
   &__swiper {
