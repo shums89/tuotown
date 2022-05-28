@@ -134,6 +134,7 @@
   flex-wrap: wrap;
   row-gap: rem(14);
   column-gap: rem(23);
+  align-items: center;
   // .social-footer__title
   &__title {
     font-weight: 500;
@@ -159,6 +160,9 @@
     font-size: rem(14);
     background-color: #2e2e2e;
     border-radius: 50%;
+    &:hover {
+      background-color: #535353;
+    }
   }
 }
 .contact-footer {
