@@ -9,21 +9,23 @@
 
 <body>
 	<div class="rootpage">
-		<h1>Верстка «tuotown»</h1>
-		<div class="rootpage__info">
-			Особенности проекта
+		<div class="rootpage__container">
+			<h1>Верстка «tuotown»</h1>
+			<div class="rootpage__info">
+				Особенности проекта
+			</div>
+			<h2>Готовые страницы:</h2>
+			<ol class="rootpage__list">
+				<li><a target="_blank" href="home.html">Главная</a></li>
+				<li><a target="_blank" href="catalog.html">Каталог</a></li>
+				<li><a target="_blank" href="service.html">Сервис</a></li>
+				<li><a target="_blank" href="product.html">Товар</a></li>
+			</ol>
+			<!-- <h2>Попапы:</h2>
+			<ol class="rootpage__list">
+				<li><a target="_blank" href="home.html#"></a></li>
+			</ol> -->
 		</div>
-		<h2>Готовые страницы:</h2>
-		<ol class="rootpage__list">
-			<li><a target="_blank" href="home.html">Главная</a></li>
-			<li><a target="_blank" href="catalog.html">Каталог</a></li>
-			<li><a target="_blank" href="service.html">Сервис</a></li>
-			<li><a target="_blank" href="product.html">Товар</a></li>
-		</ol>
-		<h2>Попапы:</h2>
-		<ol class="rootpage__list">
-			<li><a target="_blank" href="home.html#"></a></li>
-		</ol>
 	</div>
 </body>
 <style>
@@ -79,17 +81,17 @@
 		vertical-align: top;
 	}
 
-	.wrapper {
+	/* .wrapper {
 		width: 100%;
 		min-height: 100%;
 		overflow: hidden;
-	}
+	} */
 
 	.rootpage {
 		padding: 30px;
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center;
 	}
 
 	@media (max-width: 767px) {

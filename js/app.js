@@ -5732,6 +5732,17 @@
                 }));
             }
         }), 0);
+        window.addEventListener("load", (() => {
+            const lazyImages = document.querySelectorAll("img[data-src]");
+            const lazyIframe = document.querySelectorAll("iframe[data-src]");
+            const updateLazyObject = arr => {
+                arr.forEach((e => {
+                    if (e.dataset.src) e.src = e.dataset.src;
+                }));
+            };
+            if (lazyImages) updateLazyObject(lazyImages);
+            if (lazyIframe) updateLazyObject(lazyIframe);
+        }));
         if (document.querySelector(".filter-catalog__title")) document.querySelector(".filter-catalog__title").addEventListener("click", (() => {
             if (window.innerWidth < 992) document.querySelector(".filter-catalog__items").classList.toggle("_active");
         }));
