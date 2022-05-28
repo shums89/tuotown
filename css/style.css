@@ -1239,17 +1239,6 @@ textarea.input {
   z-index: -2;
 }
 
-<<<<<<< HEAD
-=======
-.no-webp .menu__body::before{
-  background: url("../img/main-block/bg.jpg") center/cover no-repeat; }
-
-.menu__body::before {
-  -webkit-filter: blur(20px);
-          filter: blur(20px);
-}
-
->>>>>>> b1b74e82afb0f81eba7bb7fbabf86f1d3f9779d3
 .menu__body::after {
   width: calc(100% + 5px);
   background-color: rgba(0, 0, 0, 0.64);
@@ -4715,10 +4704,4 @@ textarea.input {
   .table-product__more:hover {
     text-decoration: underline;
   }
-<<<<<<< HEAD
 }
-=======
-}
-
-.webp .menu__body::before{ background: url(../img/main-block/bg.webp) center/cover no-repeat; }
->>>>>>> b1b74e82afb0f81eba7bb7fbabf86f1d3f9779d3
